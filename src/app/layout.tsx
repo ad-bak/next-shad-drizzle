@@ -30,13 +30,14 @@ export default function RootLayout({
     <ClerkProvider>
       <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
       <html lang="en">
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <body className={`font-sans ${inter.variable} flex flex-col gap-4`}>
           <div>
             <TopNav />
             <main>{children}</main>
             {modal}
           </div>
-          <div className="modal-root" />
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
